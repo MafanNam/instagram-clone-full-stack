@@ -12,7 +12,7 @@ class DbUser(Base):
     username = Column(String)
     email = Column(String, unique=True)
     password = Column(String)
-    posts = relationship("DbPost", back_populates="user")
+    items = relationship("DbPost", back_populates="user")
 
 
 class DbPost(Base):
@@ -25,4 +25,4 @@ class DbPost(Base):
     timestamp = Column(DateTime)
     user_id = Column(Integer, ForeignKey("user.id"))
 
-    user = relationship("DbUser", back_populates="posts")
+    user = relationship("DbUser", back_populates="items")
