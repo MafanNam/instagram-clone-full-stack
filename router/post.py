@@ -11,8 +11,8 @@ from db import db_post
 from router.schemas import PostDisplay, PostBase, UserAuth
 
 router = APIRouter(
-    prefix="/post",
-    tags=["post"],
+    prefix="/posts",
+    tags=["posts"],
     responses={404: {"description": "Not found"}},
 )
 
